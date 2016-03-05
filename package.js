@@ -54,8 +54,7 @@ Package.onUse(function(api) {
     "client/templates/authenticated/upload.html",
     "client/templates/authenticated/uploader.html",
     "client/templates/authenticated/uploader.js",
-    "client/templates/authenticated/videoForm.html",
-    "client/templates/authenticated/videoForm.js",
+    "client/templates/authenticated/videoForm.html"
   ],["client"]);
 
   //api.export("VMConfig", ['client', 'server']);

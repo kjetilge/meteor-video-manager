@@ -1,17 +1,11 @@
-
 var pageSession = new ReactiveDict();
-
 Template.uploader.onCreated(function(){
   this.uploader = new ReactiveVar( {progress: 0} );
   this.isUploading = new ReactiveVar( false );
   this.videoFileId = new ReactiveVar( false );
-
-  Template.instance().subscribe( 'videos' ); // Remove this on deploy!!!!
 });
 
 Template.uploader.rendered = function() {
-
-
 	pageSession.set("uploaderInfoMessage", "");
 	pageSession.set("uploaderFormErrorMessage", "");
 
@@ -40,8 +34,6 @@ Template.uploader.rendered = function() {
 	$(".bootstrap-tagsinput").addClass("form-control");
 	$("input[autofocus]").focus();
 };
-
-
 
 Template.uploader.helpers({
   isUploading: function() {
@@ -115,6 +107,7 @@ Template.uploader.events({
 				    values.editionId = self.params.editionId;
         values.videoFile = Session.get("currentVideoFileId")
 				newId = Videos.insert(values, function(e) { if(e) errorAction(e); else submitAction(); });
+        VideoFiles.update(values.videoFile, {$set: {videoId: newId} })
 			}
 		);
 		return false;
