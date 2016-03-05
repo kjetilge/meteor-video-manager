@@ -1,0 +1,85 @@
+<template name="uploader">
+  <div id="videos-insert-video-new-form" class="">
+		<form role="form">
+			{{#if errorMessage}}
+			<div class="alert alert-warning">
+				{{errorMessage}}
+			</div>
+			{{/if}}
+
+			{{#if infoMessage}}
+			<div class="alert alert-success">
+				{{infoMessage}}
+			</div>
+			{{/if}}
+
+			<div class="form-group  field-video-file">
+				<label for="videoFile">
+				</label>
+        {{#if isUploading}}
+          <div class="progress">
+            <div class="progress-bar" role="progressbar" aria-valuenow="{{progress}}" aria-valuemin="0" aria-valuemax="100" style="width: {{progress}}%;">
+              <span class="sr-only">{{progress}}% opplastet</span>
+            </div>
+          </div>
+          <i class="spinner loading icon big"></i>
+        {{/if}}        
+				<div class="input-div">
+					<input type="file" id="field-video-file" class="file" multiple="false" data-show-upload="false" data-show-caption="true" data-field="videoFile">
+					<input type="hidden" name="videoFile" value="">
+					<span id="help-text" class="help-block">
+					</span>
+					<span id="error-text" class="help-block">
+					</span>
+
+				</div>
+			</div>
+
+			<div class="form-group  field-title">
+				<label for="title">
+					Tittel
+				</label>
+				<div class="input-div">
+					<input type="text" name="title" value="" class="form-control" autofocus="autofocus" required="required" data-type="string">
+					<span id="help-text" class="help-block">
+					</span>
+					<span id="error-text" class="help-block">
+					</span>
+				</div>
+			</div>
+			<div class="form-group  field-fps">
+				<label for="fps">
+					Bilder pr.sekund
+				</label>
+				<div class="input-div">
+					<div class="radio">
+						<label>
+							<input type="radio" value="25" name="fps" data-type="integer" checked>
+							25
+						</label>
+					</div>
+					<div class="radio">
+						<label>
+							<input type="radio" value="50" name="fps" data-type="integer">
+							50
+						</label>
+					</div>
+					<span id="help-text" class="help-block">
+					</span>
+					<span id="error-text" class="help-block">
+					</span>
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="submit-div">
+					<button id="form-submit-button" class="btn btn-success" type="submit">
+						<span class="fa fa-check">
+						</span>
+						Save
+					</button>
+				</div>
+			</div>
+		</form>
+	</div>
+
+</template>

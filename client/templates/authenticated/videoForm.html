@@ -1,0 +1,86 @@
+<template name="videoForm">
+<div class="page-container container" id="content">
+  <div id="videos-insert-video-new-form" class="">
+  		<form role="form">
+  			<div class="form-group  field-video-file">
+  				<label for="videoFile">
+  				</label>
+  				<div class="input-div">
+  					<span class="file-input file-input-new"><div class="file-preview ">
+      <div class="close fileinput-remove">×</div>
+      <div class="">
+      <div class="file-preview-thumbnails">
+      </div>
+      <div class="clearfix"></div>    <div class="file-preview-status text-center text-success"></div>
+      <div class="kv-fileinput-error file-error-message" style="display: none;"></div>
+      </div>
+  </div>
+  <div class="kv-upload-progress hide"></div>
+  <div class="input-group ">
+     <div tabindex="-1" class="form-control file-caption  kv-fileinput-caption">
+     <span class="file-caption-ellipsis">..</span>
+     <div class="file-caption-name"></div>
+  </div>
+     <div class="input-group-btn">
+         <button type="button" title="Clear selected files" class="btn btn-default fileinput-remove fileinput-remove-button"><i class="glyphicon glyphicon-trash"></i> Remove</button>
+
+         <button type="button" title="Abort ongoing upload" class="{{hideCancel}} btn btn-default fileinput-cancel fileinput-cancel-button"><i class="glyphicon glyphicon-ban-circle"></i> Cancel</button>
+
+         <div class="btn btn-primary btn-file"> <i class="glyphicon glyphicon-folder-open"></i> &nbsp;Browse … <input type="file" id="field-video-file" class="file" multiple="false" data-show-upload="false" data-show-caption="true" data-field="videoFile"></div>
+     </div>
+  </div></span>
+  					<input type="hidden" name="videoFile" value="">
+  					<span id="help-text" class="help-block">
+  					</span>
+  					<span id="error-text" class="help-block">
+  					</span>
+  				</div>
+  			</div>
+  			<div class="form-group  field-title">
+  				<label for="title">
+  					Tittel
+  				</label>
+  				<div class="input-div">
+  					<input type="text" name="title" value="" class="form-control" autofocus="autofocus" required="required" data-type="string">
+  					<span id="help-text" class="help-block">
+  					</span>
+  					<span id="error-text" class="help-block">
+  					</span>
+  				</div>
+  			</div>
+  			<div class="form-group  field-fps">
+  				<label for="fps">
+  					Bilder pr.sekund
+  				</label>
+  				<div class="input-div">
+  					<div class="radio">
+  						<label>
+  							<input type="radio" value="25" name="fps" data-type="integer" checked="">
+  							25
+  						</label>
+  					</div>
+  					<div class="radio">
+  						<label>
+  							<input type="radio" value="50" name="fps" data-type="integer">
+  							50
+  						</label>
+  					</div>
+  					<span id="help-text" class="help-block">
+  					</span>
+  					<span id="error-text" class="help-block">
+  					</span>
+  				</div>
+  			</div>
+  			<div class="form-group">
+  				<div class="submit-div">
+  					<button id="form-submit-button" class="btn btn-success" type="submit">
+  						<span class="fa fa-check">
+  						</span>
+  						Save
+  					</button>
+  				</div>
+  			</div>
+  		</form>
+  	</div>
+</div>
+</template>

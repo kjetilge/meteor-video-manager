@@ -1,0 +1,12 @@
+<template name="videoFile">
+  <div class="file">
+    <div class="preview">
+      {{#with videoFile}}
+          <video width="320" controls>
+            <source src="{{url}}" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+      {{/with}}
+    </div>
+  </div>
+</template>
